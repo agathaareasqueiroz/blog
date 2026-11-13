@@ -1,22 +1,22 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Blog</title>
-</head>
-<body>
-    <h1>Olá, Django com Template!</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur eius, laudantium quod consequatur, deleniti tempore illum omnis ad sit assumenda eaque unde. Architecto, quis voluptates exercitationem assumenda fuga dignissimos deserunt?</p>
+{% extends '_base.html' %}
 
-    <h3>Seu nome é {{ name }} e tem {{ age }} anos!</h3>
+{# Esse trecho será substituído no template base! #}
+{% block content %}
+<section>
 
-    {# Lista uma fruta de cada vez #}
-    <h3>Minhas frutas favoritas</h3>
+    <h2>Página inicial</h2>
+    <p>Testando o template base com a página inicial...</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus sint quas vitae fuga harum, a repellat aut ipsa qui ab perspiciatis cupiditate unde earum? Laudantium sapiente voluptatum assumenda delectus aut?</p>
 
-    {% for fruit in fruits %}
-    <div>{{ fruit }}</div>
-    {% endfor %}
+</section>
+{% endblock %}
 
-    <!-- Acabou! -->
-</body>
-</html>
+{# Esse trecho será substituído no template base! #}
+{% block aside %}
+<aside>
+
+    <h3>Conteúdo complementar</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum consequuntur, eaque, ab dolorum odio amet reprehenderit.</p>
+
+</aside>
+{% endblock %}

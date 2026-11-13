@@ -1,17 +1,12 @@
 from django.shortcuts import render
 
 
-def home(request):
+from django.shortcuts import render
 
-    fruits = ['banana', 'laranja', 'morango', 'uva']
+
+def home(request):
 
     return render(
         request,
-        'home.html',
-        {
-            'name': 'Joca da Silva',
-            'age': 24,
-            'tel': '(21) 998877665',
-            'fruits': fruits
-        }
+        'home.html'
     )
