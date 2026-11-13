@@ -7,5 +7,16 @@
 <body>
     <h1>Olá, Django com Template!</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur eius, laudantium quod consequatur, deleniti tempore illum omnis ad sit assumenda eaque unde. Architecto, quis voluptates exercitationem assumenda fuga dignissimos deserunt?</p>
+
+    <h3>Seu nome é {{ name }} e tem {{ age }} anos!</h3>
+
+    {# Lista uma fruta de cada vez #}
+    <h3>Minhas frutas favoritas</h3>
+
+    {% for fruit in fruits %}
+    <div>{{ fruit }}</div>
+    {% endfor %}
+
+    <!-- Acabou! -->
 </body>
 </html>
