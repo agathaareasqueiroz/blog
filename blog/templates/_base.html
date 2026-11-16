@@ -41,7 +41,7 @@
                             <li><a class="dropdown-item" href="#about_author">Sobre o autor</a></li>
                             <li><a class="dropdown-item" href="#policies">Políticas de privacidade</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#contacts">Faça contato</a></li>
+                            <li><a class="dropdown-item" href="/contacts">Faça contato</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -94,14 +94,14 @@
                 <nav class="d-flex flex-column lh-lg">
                     <a href="#about_site"><i class="bi bi-patch-question-fill"></i> <span>O que somos</span></a>
                     <a href="#about_author"><i class="bi bi-person-badge-fill"></i> <span>Quem somos</span></a>
-                    <a href="#contacts"><i class="bi bi-chat-dots-fill"></i> <span>Faça Contato</span></a>
+                    <a href="/contacts"><i class="bi bi-chat-dots-fill"></i> <span>Faça Contato</span></a>
                     <a href="#policies"><i class="bi bi-person-lock"></i> <span>Sua privacidade</span></a>
                 </nav>
             </div>
         </div>
         <div class="footer-botton d-flex align-items-center justify-content-between border-top border-secondary mt-3">
             <a href="#index" class="fs-2 py-1"><i class="bi bi-house-door-fill"></i></a>
-            <div>&copy; 2026 Joca da Silva</div>
+            <div>&copy; 2026 {{ ownername | default:"Sem dono" }}</div>
             <a href="#top" class="fs-2"><i class="bi bi-arrow-up-square-fill"></i></a>
         </div>
     </footer>
