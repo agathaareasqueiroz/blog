@@ -28,11 +28,11 @@
 <body data-bs-theme="light" class="px-2 min-vh-100 d-flex flex-column">
     <nav class="container navbar navbar-expand-md navbar-dark text-bg-dark fixed-top mx-auto rounded-bottom">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#index"><i class="bi bi-bootstrap-fill text-warning"></i></a>
+            <a class="navbar-brand" href="{% url 'home' %}"><i class="bi bi-bootstrap-fill text-warning"></i></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="mynavbar">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link" href="#index">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Início</a></li>
                     <li class="nav-item"><a class="nav-link" href="#content">Conteúdo</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Sobre</a>
@@ -41,7 +41,7 @@
                             <li><a class="dropdown-item" href="#about_author">Sobre o autor</a></li>
                             <li><a class="dropdown-item" href="#policies">Políticas de privacidade</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="/contacts">Faça contato</a></li>
+                            <li><a class="dropdown-item" href="{% url 'contacts' %}">Faça contato</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -59,7 +59,7 @@
             <h1 class="d-flex align-items-center gap-3 justify-content-center"><i class="bi bi-bootstrap"></i><span>Blog</span></h1>
         </div>
     </header>
-
+ 
     <main class="container d-flex flex-column flex-md-row p-0 flex-grow-1">
         <div class="main-article-section bg-light p-3 flex-fill flex-grow-1">
             {% block content %}{% endblock %}
@@ -94,13 +94,13 @@
                 <nav class="d-flex flex-column lh-lg">
                     <a href="#about_site"><i class="bi bi-patch-question-fill"></i> <span>O que somos</span></a>
                     <a href="#about_author"><i class="bi bi-person-badge-fill"></i> <span>Quem somos</span></a>
-                    <a href="/contacts"><i class="bi bi-chat-dots-fill"></i> <span>Faça Contato</span></a>
+                    <a href="{% url 'contacts' %}"><i class="bi bi-chat-dots-fill"></i> <span>Faça Contato</span></a>
                     <a href="#policies"><i class="bi bi-person-lock"></i> <span>Sua privacidade</span></a>
                 </nav>
             </div>
         </div>
         <div class="footer-botton d-flex align-items-center justify-content-between border-top border-secondary mt-3">
-            <a href="#index" class="fs-2 py-1"><i class="bi bi-house-door-fill"></i></a>
+            <a href="{% url 'home' %}" class="fs-2 py-1"><i class="bi bi-house-door-fill"></i></a>
             <div>&copy; 2026 {{ ownername | default:"Sem dono" }}</div>
             <a href="#top" class="fs-2"><i class="bi bi-arrow-up-square-fill"></i></a>
         </div>

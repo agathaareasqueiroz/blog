@@ -1,14 +1,24 @@
 {% extends '_base.html' %}
-
+ 
 {# Esse trecho será substituído no template base! #}
 {% block content %}
+
 <section>
-
     <h2>Página inicial</h2>
-    <p>Testando o template base com a página inicial...</p>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus sint quas vitae fuga harum, a repellat aut ipsa qui ab perspiciatis cupiditate unde earum? Laudantium sapiente voluptatum assumenda delectus aut?</p>
-
+    {# Loop para iterar cada postagem #}
+    {% for post in posts %}
+      <div>
+          <img src="{{ post.thumbnail }}" alt="{{ post.title }}">
+          <h3><a href="#{{ post.id }}">{{ post.title }}</a></h3>
+          <p>{{ post.summary }}</p>
+          <small>Post nº {{ post.id }}</small>
+      </div>
+    {% empty %}
+      {# `empty` acontece quando o iterable `post` está vazio #}
+      <p>Nenhum post cadastrado ainda.</p>
+    {% endfor %}
 </section>
+
 {% endblock %}
 
 {# Esse trecho será substituído no template base! #}
