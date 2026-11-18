@@ -60,14 +60,19 @@
         </div>
     </header>
  
-    <main class="container d-flex flex-column flex-md-row p-0 flex-grow-1">
-        <div class="main-article-section bg-light p-3 flex-fill flex-grow-1">
-            {% block content %}{% endblock %}
-        </div>
-        <div class="main-aside p-3 bg-dark-subtle">
-            {% block aside %}{% endblock %}
-        </div>
-    </main>
+<main class="container d-flex flex-column flex-md-row p-0 flex-grow-1">
+    <div class="main-article-section bg-light p-3 flex-fill flex-grow-1">
+        {% block content %}{% endblock %}
+    </div>
+
+    {# Esse trecho não funciona de `'show_aside': False` na view #}
+    {% if show_aside %}
+    <div class="main-aside p-3 bg-dark-subtle">
+        {% block aside %}{% endblock %}
+    </div>
+    {% endif %}
+
+</main>
 
     <footer class="container bg-dark text-light rounded-top">
         <div class="footer-top d-flex align-items-center justify-content-around">
