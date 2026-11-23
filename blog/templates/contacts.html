@@ -1,11 +1,39 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Blog - Faça Contato</title>
-</head>
-<body>
-    <h1>Faça Contato</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum minus dignissimos neque cumque ipsa similique, repellendus consectetur sunt commodi earum quis? Perferendis quam odit, doloribus minima ab fugit nobis. In.</p>
-</body>
-</html>
+{# blog\templates\contacts.html #}
+
+{% extends '_base.html' %}
+
+{% block content %}
+<section>
+    <h2>Faça Contato</h2>
+    <p>Preencha os campos abaixo para entrar em contato com a equipe do Blog.</p>
+    <p class="fs-6 text-danger text-center"><em>Todos os campos obrigatórios.</em></p>
+    <form class="was-validated">
+        <p>
+            <label for="name" class="form-label">Nome:</label>
+            <input type="text" name="name" id="name" required minlength="2" class="form-control">
+        </p>
+        <p>
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" name="email" id="email" required class="form-control">
+        </p>
+        <p>
+            <label for="subject" class="form-label">Assunto:</label>
+            <input type="text" name="subject" id="subject" required minlength="3" class="form-control">
+        </p>
+        <p>
+            <label for="message" class="form-label">Mensagem:</label>
+            <textarea name="message" id="message" rows="4" required minlength="4" class="form-control"></textarea>
+        </p>
+        <p>
+            <button class="btn btn-primary">Enviar</button>
+        </p>
+    </form>
+</section>
+{% endblock %}
+
+{% block aside %}
+<aside>
+    <h3>Mais Contatos</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum consequuntur, eaque, ab dolorum odio amet reprehenderit.</p>
+</aside>
+{% endblock %}
