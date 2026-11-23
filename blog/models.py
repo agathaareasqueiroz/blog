@@ -9,9 +9,9 @@ class PostManager(models.Manager):
     # Define algumas das Regras de Negócio
     def get_queryset(self):
         return super().get_queryset().filter(
-            is_deleted=False#,                   # Não mostra post se apagado
+            is_deleted=False,                   # Não mostra post se apagado
             #user__is_deleted=False,             # Não mostra post se usuário apagado
-            #created_at__lte=timezone.now()      # Não mostra post se do futuro
+            created_at__lte=timezone.now()      # Não mostra post se do futuro
         )
 
 # Modela a entidade 'Post'

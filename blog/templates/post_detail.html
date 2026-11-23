@@ -1,0 +1,28 @@
+{# blog/templates/post_detail.html #}
+
+{% extends '_base.html' %}
+
+{% block content %}
+<article>
+    {% if post.thumbnail %}
+    <div><img src="{{ post.thumbnail }}" alt="{{ post.title }}" class="w-100 rounded"></div>
+    {% endif %}
+
+    <h2 class="my-4">{{ post.title }}</h2>
+    <div class="alert alert-secondary p-2 text-end">
+        <small><em>
+            Por {{ post.user.get_full_name|default:post.user.username }}
+            em {{ post.created_at|date:"d/m/Y \à\s H:i" }}.
+        </em></small>
+    </div>
+    <div>{{ post.textbody|safe }}</div>
+</article>
+
+{% endblock %}
+
+{% block aside %}
+<aside>
+    <h5>{{ post.user.get_full_name|default:post.user.username }}</h5>
+    <p><small>Membro desde {{ post.user.date_joined|date:"d/m/Y" }}</small></p>
+</aside>
+{% endblock %}
